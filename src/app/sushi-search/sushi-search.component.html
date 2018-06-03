@@ -1,0 +1,13 @@
+<div id="search-component">
+  <h4>Sushi Search</h4>
+
+  <input #searchBox id="search-box" (keyup)="search(searchBox.value)" />
+
+  <ul class="search-result">
+    <li *ngFor="let sushi of sushis$ | async" >
+      <a routerLink="/detail/{{sushi.id}}">
+        {{sushi.name}}
+      </a>
+    </li>
+  </ul>
+</div>
